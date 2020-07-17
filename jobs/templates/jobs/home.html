@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -47,7 +48,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Juanpredev</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Juanpredev</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,10 +58,10 @@
                         <a class="nav-link" href="#">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Resume</a>
+                        <a class="nav-link" href="{% static 'CV2020.pdf' %}">Resume</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="{% url 'posts' %}">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -73,6 +74,7 @@
             <div class="container">
                 <h1>Hi! I'm a fullstack dev</h1>
                 <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
+                <img src="{% static 'juan.png' %}" height="300">
                 <p>
                     <a href="#" class="btn btn-primary my-2">CONTACT ME</a>
                 </p>

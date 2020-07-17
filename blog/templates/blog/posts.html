@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -29,8 +30,8 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Juanpredev</a>
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{% url 'home' %}">Juanpredev</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,10 +41,10 @@
                         <a class="nav-link" href="#">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Resume</a>
+                        <a class="nav-link" href="{% static 'CV2020.pdf' %}">Resume</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link activate" href="#">Blog</a>
+                        <a class="nav-link active" href="{% url 'posts' %}">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -55,7 +56,7 @@
             <h2 class="text-center pt-3">Welcome to Juan's blog</h2>
             <h3 class="pt-3">Latest post</h3>
             {% for blog in blogs.all%}
-            <a href="">
+            <a href="{% url 'detail' blog.id %}">
                 <h4> {{ blog.title }} </h4>
             </a>
             {{ blog.date_pretty}}

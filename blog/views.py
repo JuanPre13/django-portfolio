@@ -2,9 +2,9 @@ from django.shortcuts import render, get_object_or_404
 from .models import Blog
 
 
-def all_blogs(request):
+def all_posts(request):
     blogs = Blog.objects
-    return render(request, 'blog/allblogs.html',
+    return render(request, 'blog/posts.html',
                             {'blogs':blogs} 
     )
 def show_blog(request, id_blog):
